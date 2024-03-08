@@ -1,0 +1,11 @@
+---
+pagination:
+  data: articles
+  size: 1
+  alias: article
+permalink: "/article/{{ article.title | slugify }}/"
+---
+<h1>{{ article.title }}</h1>
+<div>{{ article.year }}</div>
+<div>{{ article.era }}</div>
+<div>{{ article.content }}</div>
