@@ -4,4 +4,4 @@
 - `npm run dev`
 
 To share Google Sheets as `.csv`:
-- File > Share > Publish to web > Link your sheet, and select `.csv` from the dropdown.
+- File > Share > Publish to web > Link > Select your sheet, and select `.csv` from the dropdown. Copy the URL.
