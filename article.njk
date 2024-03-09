@@ -4,8 +4,24 @@ pagination:
   size: 1
   alias: article
 permalink: "/article/{{ article.title | slugify }}/"
+eleventyExludeFromCollections: true
 ---
+<a href="/">Home</a>
 <h1>{{ article.title }}</h1>
 <div>{{ article.year }}</div>
 <div>{{ article.era }}</div>
 <div>{{ article.content }}</div>
+<hr />
+{% set prev = pagination.page.previous %}
+{% if prev %}
+  <div>
+    Previous: <a href="/article/{{ prev.title | slugify }}">{{ prev.title }}</a>
+  </div>
+{% endif %}
+
+{% set next = pagination.page.next %}
+{% if next %}
+  <div>
+    Next: <a href="/article/{{ next.title | slugify }}">{{ next.title }}</a>
+  </div>
+{% endif %}
