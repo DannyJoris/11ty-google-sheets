@@ -6,7 +6,7 @@ pagination:
 permalink: "/article/{{ article.title | slugify }}/"
 eleventyExludeFromCollections: true
 ---
-<a href="/">Home</a>
+<a href="{{ '/' | url }}">Home</a>
 <h1>{{ article.title }}</h1>
 <div>{{ article.year }}</div>
 <div>{{ article.era }}</div>
@@ -15,13 +15,13 @@ eleventyExludeFromCollections: true
 {% set prev = pagination.page.previous %}
 {% if prev %}
   <div>
-    Previous: <a href="/article/{{ prev.title | slugify }}">{{ prev.title }}</a>
+    Previous: <a href="{{ ('/article/' + (prev.title | slugify)) | url }}">{{ prev.title }}</a>
   </div>
 {% endif %}
 
 {% set next = pagination.page.next %}
 {% if next %}
   <div>
-    Next: <a href="/article/{{ next.title | slugify }}">{{ next.title }}</a>
+    Next: <a href="{{ ('/article/' + (next.title | slugify)) | url }}">{{ next.title }}</a>
   </div>
 {% endif %}

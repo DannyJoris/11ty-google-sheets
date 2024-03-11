@@ -20,7 +20,7 @@
     <tbody>
     {% for article in articles %}
       <tr>
-        <td><a href="/article/{{ article.title | slugify }}">{{ article.title }}</a></td>
+        <td><a href="{{ ('/article/' + (article.title | slugify)) | url }}">{{ article.title }}</a></td>
         <td>{{ article.year }}</td>
         <td>{{ article.content }}</td>
         <td>{{ article.era }}</td>
